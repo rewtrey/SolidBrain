@@ -1,6 +1,7 @@
 @extends('admin.layouts.app_admin')
 
 @section('content')
+
     <div class="container">
         @component('admin.components.breadcrumb')
             @slot('title') Сategory list @endslot
@@ -8,7 +9,7 @@
             @slot('active') Category @endslot
         @endcomponent
         <hr>
-        <a href="{{route('admin.category.index')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Create category</a>
+        <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Create category</a>
         <table class="table table-striped">
             <thead>
             <th>Category Name</th>
@@ -20,8 +21,14 @@
                 <tr>
                     <td>{{$category->title}}</td>
                     <td>{{$category->published}}</td>
-                    <td>
-                        <a href="{{route('admin.category.edit', ['id'=>$category->id])}}"><i class="fa fa-edit"></i></a>
+                    <td class="text-right">
+                        <form action="{{route('admin.category.destroy', $category['id'])}}" method="post">
+                            <input type="hidden" name="_method" value="DELETE">
+                            @csrf
+
+                            <a class="btn btn-default" href="{{route('admin.category.edit', $category['id'])}}"><i class="fa fa-edit"></i></a>
+                            <button type="submit" class="btn"><i class="fa fa-trash-o"></i></button>
+                        </form>
                     </td>
                 </tr>
             @empty

@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
-
+use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\CKEditorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,20 +27,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('admin' )->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.index');
     Route::resource('category', CategoryController::class, ['as' => 'admin']);
+    Route::resource('article', ArticleController::class, ['as' => 'admin']);
+    Route::post('ckeditor/image_upload', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('upload');
 });
 
-
-//Route::prefix('admin')->namespace('Admin')->middleware('auth')->group(function () {
-   // Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.index');
-   // Route::resource('category', CategoryController::class);
-//});
-
-
-
-//Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=>['auth']], function (){
-   // Route::get('/', [App\Http\Controllers\Admin\DashboardController::class, 'dashboard'])->name('admin.index');
-   // Route::resource('category', App\Http\Controllers\Admin\CategoryController::class);
-//});
 
 
 
