@@ -17,12 +17,14 @@ use App\Http\Controllers\CKEditorController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.app');
 });
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 
 Route::prefix('admin' )->middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, 'dashboard'])->name('admin.index');

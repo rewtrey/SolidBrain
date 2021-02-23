@@ -16,7 +16,20 @@ class Category extends Model
         return $this->hasMany(self::class, 'parent_id');
     }
 
-    public function setSlugAttribute($value) {
-        $this->attributes['slug'] = Str::slug( mb_substr($this->title, 0, 40) . "-" , '-');
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . "-", '-');
+    }
+
+    // Polymorphic relation with articles
+    public function articles()
+    {
+        return $this->morphedByMany('App\Models\Article', 'categoryable');
+
+    }
+
+    public function scopeLastCategories($query, $count)
+    {
+        return $query->orderBy('created_at', 'desc')->take($count)->get();
     }
 }
