@@ -10,9 +10,9 @@
             @slot('active') Article @endslot
         @endcomponent
 
-        <hr />
+        <hr/>
 
-        <<form class="form-horizontal" action="{{route('admin.article.update', $article)}}" method="post">
+        <form class="form-horizontal" action="{{route('admin.article.update', $article['id'])}}" method="post">
                 <input type="hidden" name="_method" value="put">
                 {{ csrf_field() }}
 

@@ -46,8 +46,7 @@ class ArticleController extends Controller
     {
 
         $article = Article::create($request->all());
-      //git status  $article->slug = preg_replace('/<[^>]*>/', ' ', ($article->title));
-
+        $article->slug = preg_replace('/<[^>]*>/', ' ', ($article->title));
         // Categories
         if ($request->input('categories')) :
             $article->categories()->attach($request->input('categories'));

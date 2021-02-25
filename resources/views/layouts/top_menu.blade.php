@@ -7,7 +7,7 @@
                 {{$category->title}}
             </a>
                     <ul class="dropdown-menu">
-                        @include('layouts.top_menu', ['categories' => $category->children])
+                        @include('layouts.top_menu', ['categories' => $category->children->where('published', 1)])
                     </ul>
                 @else
                     <li>

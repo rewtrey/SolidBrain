@@ -10,7 +10,7 @@
         @endforeach
         @endisset
 
-
+    >
         {!! $delimiter ?? "" !!}{{$category->title ?? ""}}
     </option>
 

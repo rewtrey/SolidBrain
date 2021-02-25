@@ -8,11 +8,12 @@ use Illuminate\Support\Str;
 
 class Article extends Model
 {
-    protected $fillable = ['title', 'description', 'meta_keyword'];
+    protected $fillable = ['title', 'description', 'slug', 'published', 'meta_keyword'];
 
     // Mutators
-    public function setSlugAttribute($value) {
-        $this->attributes['slug'] = Str::slug( mb_substr($this->title) . "-" , '-');
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . "-", '-');
     }
 
     // Polymorphic relation with categories

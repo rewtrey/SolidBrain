@@ -20,10 +20,9 @@
             <tbody>
             @forelse ($articles as $article)
                 <tr>
-
                     <td>{!! $article->title !!}</td>
                     <td>{!! $article->description !!}</td>
-                    <td>{!! $article->published !!}</td>
+                    <td>{{$article->published}}</td>
                     <td class="text-right">
                         <form action="{{route('admin.article.destroy', $article['id'])}}" method="post">
                             <input type="hidden" name="_method" value="DELETE">
