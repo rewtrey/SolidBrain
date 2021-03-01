@@ -17,6 +17,11 @@
     @include('admin.articles.partials.categories', ['categories' => $categories])
 </select>
 
+<label for="">Description Short</label>
+<textarea class="form-control" id="description_short" name="description short">{{$article->description_short ?? ""}}</textarea>
+
+<hr />
+
 <label for="">Description</label>
 <textarea class="form-control" id="description" name="description">{{$article->description ?? ""}}</textarea>
 
@@ -35,5 +40,6 @@
         filebrowserUploadMethod: 'form'
     } );
 </script>
+
 
 <input class="btn btn-primary" type="submit" value="Save">

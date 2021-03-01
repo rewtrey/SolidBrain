@@ -46,6 +46,7 @@ class ArticleController extends Controller
     {
 
         $article = Article::create($request->all());
+        $article->user_id = $request->user()->id;
         $article->slug = preg_replace('/<[^>]*>/', ' ', ($article->title));
         // Categories
         if ($request->input('categories')) :

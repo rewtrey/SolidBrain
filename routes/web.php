@@ -5,7 +5,7 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\PageController;
-
+use App\Http\Controllers\ContactFormController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,15 +23,20 @@ use App\Http\Controllers\PageController;
 Route::get('/', function () {
     return view('layouts.app');
 
+    // contact form
+
 });
 
 Auth::routes();
 
+// contact form
+Route::get('/contact-us', [ContactFormController::class, 'index'])->name('contact');
+Route::post('/contact-us', [ContactFormController::class, 'send_mail'])->name('addContact');
+
 Route::get('/{slug}', [PageController::class, 'category'])->name('category');
+Route::get('/blog/{slug}', [PageController::class, 'article'])->name('article');
 
 
-
-//Route::get('/articles/{slug}', [PageController::class, 'article'])->name('article');    -- open article
 //Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //ADMIN ROUTE
