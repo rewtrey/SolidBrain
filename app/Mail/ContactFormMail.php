@@ -30,15 +30,19 @@ class ContactFormMail extends Mailable
      */
     public function build()
     {
-        return $this->from('noreply@domain.com')
+        $view = $this->from('rewtrey1@gmail.com')
             ->markdown('contactForm.template.client.contactform')
-            ->attachFromStorage($this->user['screenshot'])
             ->with([
                 'subject' => $this->user['subject'],
                 'message' => $this->user['message'],
                 'email' => $this->user['email'],
                 'phone_number' => $this->user['phone_number'],
-                'fullname' => $this->user['fullname']
+                'lastName' => $this->user['lastName'],
+                'name' => $this->user['name']
             ]);
+        if ( ! empty($this->user['image']) )
+            $view->attachFromStorageDisk('public' , $this->user['image']);
+
+        return $view;
     }
 }

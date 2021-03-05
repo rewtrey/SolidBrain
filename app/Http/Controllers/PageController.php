@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,13 @@ class PageController extends Controller
             ->where('published', 1)
             ->paginate(15);
 
+        $blogs =  $category
+            ->blogs()
+            ->where('published', 1)
+            ->paginate(15);
+
         return view('page.category',
-            compact('articles', 'category'));
+            compact('blogs', 'category' , 'articles'));
     }
 
     public function article($slug)
@@ -32,5 +38,19 @@ class PageController extends Controller
             'article' => $article,
         ]);
     }
+
+    public function blog($slug)
+    {
+        $blog = Blog::where('slug', $slug)->first();
+
+        if (!$blog) {
+            return abort(404);
+        }
+
+        return view('page.blog', [
+            'blog' => $blog,
+        ]);
+    }
+
 
 }

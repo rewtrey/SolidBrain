@@ -32,4 +32,10 @@ class Category extends Model
     {
         return $query->orderBy('created_at', 'desc')->take($count)->get();
     }
+
+    public function blogs()
+    {
+        return $this->morphedByMany('App\Models\Blog', 'categoryable');
+
+    }
 }

@@ -90,9 +90,24 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                  data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">CArticles:</h6>
+                    <h6 class="collapse-header">Articles:</h6>
                     <a class="collapse-item" href="{{route('admin.article.index')}}">Articles</a>
 
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseBlogs"
+               aria-expanded="true" aria-controls="collapseBlogs">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>Blogs</span>
+            </a>
+            <div id="collapseBlogs" class="collapse" aria-labelledby="headingBlogs"
+                 data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Blogs:</h6>
+                    <a class="collapse-item" href="{{route('admin.blogs.index')}}">Blogs</a>
                 </div>
             </div>
         </li>
@@ -106,6 +121,7 @@
         </div>
 
         <!-- Nav Item - Pages Collapse Menu -->
+
         <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                aria-expanded="true" aria-controls="collapsePages">

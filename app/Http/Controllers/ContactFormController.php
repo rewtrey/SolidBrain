@@ -2,42 +2,46 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
+use App\Http\Requests\ContactUs\ContactUsRequest;
+use App\Models\ContactUs;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Mail;
-
 use App\Mail\ContactFormMail;
+use Illuminate\Support\Facades\Storage;
+
+
+
 
 class ContactFormController extends Controller
 {
     public function index()
     {
-        return view('contacts'); //renders the contact page
+        return view('contactForm.contacts'); //renders the contact page
     }
 
-    public function send_mail(Request $request)
+
+    public function send_mail(ContactUsRequest $request): RedirectResponse
     {
-        $this->validate($request, [
-            'fullname' => ['required', 'string', 'max:255' ],
-            'email' => ['required', 'string', 'email', 'max:255' ],
-            'phone_number' => ['string', 'max:255'],
-            'subject' => ['required', 'string', 'max:255'],
-            'message' => ['required', 'string', 'max:255'],
-           // 'screenshot' => ['file|mimes:jpeg,png,jpg,gif,svg|max:2048', 'sometimes'],
-        ]);
-        $contact = [
-            'fullname' => $request['fullname'],
-            'email' => $request['email'],
-            'phone_number' => $request['phone_number'],
-            'subject' => $request['subject'],
-            'message' => $request['message'],
-            'screenshot' => $request['screenshot']->store('contact', 'public'),
-        ];
+        $validated = $request->validated();
 
+        $contact= new ContactUs($validated);
 
+        if ($request->hasFile('image'))
+        {
+            $contact->image = $validated['image']
+                ->store('contact', 'public');
 
-        Mail::to('receipent@domain.com')->send(new ContactFormMail($contact));
+            if (Storage::disk('public')->exists($contact)) {
+                $contents = Storage::get($contact);
+            }
+        }
+
+        $contact->save();
+
+        Mail::to('rewtrey1@gmail.com')->send(new ContactFormMail($contact));
 
         return redirect()->route('contact')->with('status', ' Your Mail has been received');
     }
 }
+
+

@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ArticleController;
+use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\BlogSearchController;
 use App\Http\Controllers\ContactFormController;
 
 /*
@@ -21,11 +23,14 @@ use App\Http\Controllers\ContactFormController;
 
 //home
 Route::get('/', function () {
-    return view('layouts.app');
-
-    // contact form
-
+ return view('layouts.app');
 });
+
+//search blogs
+Route::get('/search', [BlogSearchController::class, 'index'])->name('search');
+Route::get('/autocomplete', [BlogSearchController::class, 'autocomplete'])->name('autocomplete');
+
+
 
 Auth::routes();
 
@@ -33,18 +38,18 @@ Auth::routes();
 Route::get('/contact-us', [ContactFormController::class, 'index'])->name('contact');
 Route::post('/contact-us', [ContactFormController::class, 'send_mail'])->name('addContact');
 
+//memu
 Route::get('/{slug}', [PageController::class, 'category'])->name('category');
-Route::get('/blog/{slug}', [PageController::class, 'article'])->name('article');
+Route::get('/article/{slug}', [PageController::class, 'article'])->name('article');
+Route::get('/blog/{slug}', [PageController::class, 'blog'])->name('blog');
 
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //ADMIN ROUTE
-
 Route::prefix('admin' )->middleware('auth')->group(function () {
     Route::get('/home', [DashboardController::class, 'dashboard'])->name('admin.index');
     Route::resource('category', CategoryController::class, ['as' => 'admin']);
     Route::resource('article', ArticleController::class, ['as' => 'admin']);
+    Route::resource('blogs', BlogController::class, ['as' => 'admin']);
     Route::post('ckeditor/image_upload', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('upload');
 });
 

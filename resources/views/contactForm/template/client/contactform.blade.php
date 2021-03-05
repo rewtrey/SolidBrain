@@ -7,9 +7,8 @@
         {{$phone_number}}<br/>
         {{$email}} <br/>
         Thanks, <br/>
-        {{$fullname}}
-
-        {{ config('app.name') }}
+        {{$name}}<br/>
+        {{$lastName}}<br/>
 
     </h4>
 

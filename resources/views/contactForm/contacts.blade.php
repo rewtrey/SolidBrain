@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 
     <div class="contact">
     <div class="container">
@@ -24,17 +27,32 @@
         <div class="row justify-content-center">
             <div class="col-xl-8 col-lg-8">
                 <div class="login-form">
+
                     <form method="POST" action="{{ route('addContact') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
 
                             <div class="col-6">
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label text-md-right">{{ __('Full Name') }}</label>
+                                    <label for="name" class="col-form-label text-md-right">{{ __('Name') }}</label>
 
-                                    <input type="text" class="form-control @error('fullname') is-invalid @enderror" name="fullname" value="{{ isset(Auth::user()->firstname) ? Auth::user()->firstname : '' }} {{ isset(Auth::user()->lastname) ? Auth::user()->lastname : '' }}" required autocomplete="Fullname" autofocus>
+                                    <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" >
 
-                                    @error('fullname')
+                                    @error('name')
+                                    <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <label for="name" class="col-form-label text-md-right">{{ __('Last Name') }}</label>
+
+                                    <input type="text" class="form-control @error('lastName') is-invalid @enderror" name="lastName" >
+
+                                    @error('lastName')
                                     <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
@@ -47,7 +65,7 @@
                                 <div class="form-group">
                                     <label for="email" class="col-form-label text-md-right">{{ __('Email Address') }}</label>
 
-                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ isset(Auth::user()->email) ? Auth::user()->email : '' }}" required autocomplete="email" autofocus>
+                                    <input type="email" class="form-control @error('email') is-invalid @enderror" name="email">
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -63,7 +81,7 @@
                                 <div class="form-group">
                                     <label for="name" class="col-form-label text-md-right">{{ __('Phone Number') }}</label>
 
-                                    <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" value="{{ isset(Auth::user()->phone_number) ? Auth::user()->phone_number : '' }}" required autocomplete="phone_number" autofocus>
+                                    <input type="text" class="form-control @error('phone_number') is-invalid @enderror" name="phone_number" >
 
                                     @error('phone_number')
                                     <span class="invalid-feedback" role="alert">
@@ -79,7 +97,7 @@
                                 <div class="form-group">
                                     <label for="name" class="col-form-label text-md-right">{{ __('Subject') }}</label>
 
-                                    <input type="text" class="form-control @error('subject') is-invalid @enderror" name="subject" required autofocus>
+                                    <input type="text" class="form-control @error('subject') is-invalid @enderror" name="subject"  >
 
                                     @error('subject')
                                     <span class="invalid-feedback" role="alert">
@@ -94,7 +112,7 @@
 
                                     <label for="password" class="col-form-label text-md-right">{{ __('Message') }}</label>
 
-                                    <textarea class="form-control @error('message') is-invalid @enderror" name="message" required></textarea>
+                                    <textarea class="form-control @error('message') is-invalid @enderror" name="message" ></textarea>
 
                                     @error('message')
                                     <span class="invalid-feedback" role="alert">
@@ -105,11 +123,9 @@
                             </div>
 
                             <div class="col-6">
-
                                 <div class="form-group">
-                                    <label for="name" class="col-form-label text-md-right">{{ __('Attach Screenshot') }}</label>
+                                    <input type="file" accept="image/*" name="image" >
 
-                                    <input type="file" accept="image/*" class="form-control @error('screenshot') is-invalid @enderror" name="screenshot" autofocus>
                                 </div>
                             </div>
                         </div>
@@ -127,4 +143,4 @@
         </div>
     </div>
 </div>
-
+@endsection

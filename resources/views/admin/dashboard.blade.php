@@ -49,6 +49,17 @@
                     @endforeach
                 </a>
             </div>
+            <div class="col-sm-6">
+                <a class="btn btn-block btn-default" href="#">Create Blog</a>
+                @foreach($blogs as $blog)
+                    <a class="list-group-item" href="{{route('admin.blogs.edit', $blog)}}">
+                        <h4 class="list-group-item-heading">{!! $blog->title !!}</h4>
+                        <p class="list-group-item-text">
+                            {{$blog->categories()->pluck('title')->implode(', ')}}
+                        </p>
+                        @endforeach
+                    </a>
+            </div>
         </div>
     </div>
 
