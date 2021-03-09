@@ -1,11 +1,5 @@
-
-
 @extends('layouts.app')
-
-
 @section('meta_keyword', $article->meta_keyword )
-
-
 @section('content')
 
     <div class="container">

@@ -5,7 +5,7 @@
 @section('content')
 
     @if ($category->title === 'Blog')
-        @include('layouts.blogsSearch')
+        @include('admin.blogs.search.blogsSearch')
         <div class="row articles">
             @foreach ($blogs as $blog)
                 <div class="col-4">
@@ -67,7 +67,6 @@
         @endforelse
 
         {{$articles->links()}}
-    @include('contactForm.contacts')
 </div>
         @endif
     @endif

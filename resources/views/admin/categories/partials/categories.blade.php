@@ -14,7 +14,7 @@
 
         @endisset
 
-
+    >
         {!! $delimiter ?? "" !!}{{$category_list->title ?? ""}}
     </option>
 

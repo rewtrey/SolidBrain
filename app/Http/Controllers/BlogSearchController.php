@@ -8,39 +8,30 @@ use Illuminate\Http\Request;
 
 class BlogSearchController extends Controller
 {
-    public function search() {
-        $request = $_GET['text'];
-        if ($request==NULL) {
-            $data= Blog::all();
-        } else {
-            $data=Blog::select("title as name")
-                ->where("title","LIKE","%{$request->input('query')}%")
-                ->get();
-        }
-        return view('results')->with('results',$data);
-    }
-
-
-
-/*
     public function index(Request $request)
     {
-        $blogs = Blog::select("title as name")
-            ->where("title","LIKE","%{$request->input('query')}%")
-            ->get();
-        return view('layouts.blogsSearch',
-            compact('blogs'));
+
+        return view('admin.blogs.search.search',
+            ['blogs' => Blog::orderBy('created_at', 'desc')->paginate(10)],);
     }
 
 
+    public function search(Request $request){
 
-    public function autocomplete(Request $request)
-    {
-        $data = Blog::select("title as name")
-         ->where("title","LIKE","%{$request->input('query')}%")
-         ->get();
+        $search_text = $request->input('query');
+        if ($search_text==NULL) {
+            $resalt= Blog::all();
+        } else {
+            $resalt = Blog::select("title as name")
+                ->where("title","LIKE","%{$search_text}%")
+                ->get();
 
-        return response()->json($data);
+/*
+         $resalt = Blog::select("title as name")
+             ->where("title","LIKE","%{$request->input('query')}%")
+             ->get();
+*/}
+        return response()->json($resalt);
     }
-*/
+
 }

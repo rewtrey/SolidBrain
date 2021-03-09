@@ -27,8 +27,8 @@ Route::get('/', function () {
 });
 
 //search blogs
-Route::get('/search', [BlogSearchController::class, 'index'])->name('search');
-Route::get('/autocomplete', [BlogSearchController::class, 'autocomplete'])->name('autocomplete');
+Route::get('/search/result', [BlogSearchController::class, 'index']);
+Route::get('/autocomplete', [BlogSearchController::class, 'search'])->name('autocomplete');
 
 
 
