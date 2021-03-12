@@ -34,11 +34,16 @@ class ContactFormController extends Controller
             if (Storage::disk('public')->exists($contact)) {
                 $contents = Storage::get($contact);
             }
+
+
         }
 
         $contact->save();
 
         Mail::to('rewtrey1@gmail.com')->send(new ContactFormMail($contact));
+        $contact->image = substr($contact->image, strpos($contact->image, "/")+1);
+        $contact->save();
+
 
         return redirect()->route('contact')->with('status', ' Your Mail has been received');
     }

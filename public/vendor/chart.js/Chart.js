@@ -8679,7 +8679,7 @@ var exports$4 = core_element.extend({
 		return getBeforeAfterBodyLines(this._options.callbacks.afterBody.apply(this, arguments));
 	},
 
-	// Get the footer and beforeFooter and afterFooter lines
+	// Get the Footer and beforeFooter and afterFooter lines
 	// Args are: (tooltipItem, data)
 	getFooter: function() {
 		var me = this;

@@ -10,9 +10,12 @@ class BlogSearchController extends Controller
 {
     public function index(Request $request)
     {
+        $query = !empty(trim($request->search)) ? trim($request->search) : null;
 
-        return view('admin.blogs.search.search',
-            ['blogs' => Blog::orderBy('created_at', 'desc')->paginate(10)],);
+
+        $resalt = Blog::where('title','LIKE','%'.$query.'%')->get()->all();
+
+        return view('admin.blogs.search.search',compact('query','resalt'));
     }
 
 

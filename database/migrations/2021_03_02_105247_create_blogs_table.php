@@ -17,8 +17,8 @@ class CreateBlogsTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->string('title');
-            $table->text('description_short')->nullable();
-            $table->text('description');
+            $table->string('description_short', 1024)->nullable();
+            $table->string('description', 5012);
             $table->string('meta_keyword');
             $table->tinyInteger('published')->nullable();
             $table->string('slug')->unique()->nullable();

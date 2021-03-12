@@ -3,13 +3,9 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-
 use App\Http\Requests\Blog\CreateBlogRequest;
-use App\Models\Article;
-
 use App\Models\Blog;
 use App\Models\Category;
-
 use Illuminate\Http\Request;
 
 

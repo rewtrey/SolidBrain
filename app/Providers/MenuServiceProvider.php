@@ -34,6 +34,15 @@ class MenuServiceProvider extends ServiceProvider
            $view->with('categories', \App\Models\Category::where('parent_id', 0)
            ->where('published', 1)->get());
         });
+
+
+        View::composer('layouts.footer', function ($view){
+            $view->with('categories', \App\Models\Category::where('published', 1)->get());
+        });
+
+        View::composer('layouts.footer', function ($view){
+            $view->with('footers', \App\Models\Footer::orderBy('created_at', 'desc')->get());
+        });
     }
 
 }

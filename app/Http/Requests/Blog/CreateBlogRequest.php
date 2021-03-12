@@ -24,8 +24,9 @@ class CreateBlogRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['string', 'min:5', 'max:256'],
-            'description' => ['string', 'min:8', 'max:1024'],
+            'title' => ['string', 'min:5', 'max:256', 'required'],
+            'description_short'  => ['string', 'min:8', 'max:1024'],
+            'description' => ['string', 'min:8', 'max:2048', 'required'],
         ];
     }
 }

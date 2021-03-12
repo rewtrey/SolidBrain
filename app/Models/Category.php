@@ -38,4 +38,10 @@ class Category extends Model
         return $this->morphedByMany('App\Models\Blog', 'categoryable');
 
     }
+
+    public function footers()
+    {
+        return $this->morphedByMany('App\Models\Footer', 'categoryable');
+
+    }
 }

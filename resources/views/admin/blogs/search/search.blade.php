@@ -2,8 +2,7 @@
 
 @section('content')
 
-    @if ($blogs==NULL)
-        @foreach ($blogs as $blog)
+        @foreach ($resalt as $blog)
             <div class="container">
                 <div class="row">
                     <div align="right"><th>By: </th><td>{{ $blog->user->name}}</td>

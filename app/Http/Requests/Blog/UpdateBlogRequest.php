@@ -25,6 +25,7 @@ class UpdateBlogRequest extends FormRequest
     {
         return [
             'title' => ['string', 'min:1', 'max:64','sometimes'],
+            'description_short'  => ['string', 'min:8', 'max:1024','sometimes'],
             'description' => ['string', 'min:1', 'max:512', 'sometimes'],
         ];
     }

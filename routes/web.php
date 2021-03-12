@@ -5,6 +5,9 @@ use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\FooterController;
+use App\Http\Controllers\Admin\RevisionContactUsController;
+use App\Http\Controllers\Admin\DownloadFileController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\BlogSearchController;
 use App\Http\Controllers\ContactFormController;
@@ -50,6 +53,9 @@ Route::prefix('admin' )->middleware('auth')->group(function () {
     Route::resource('category', CategoryController::class, ['as' => 'admin']);
     Route::resource('article', ArticleController::class, ['as' => 'admin']);
     Route::resource('blogs', BlogController::class, ['as' => 'admin']);
+    Route::resource('footer', FooterController::class, ['as' => 'admin']);
+    Route::resource('contact-us', RevisionContactUsController::class, ['as' => 'admin']);
+    Route::get('/download/{file}', [DownloadFileController::class, 'download'])->name('downloadfile');
     Route::post('ckeditor/image_upload', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('upload');
 });
 

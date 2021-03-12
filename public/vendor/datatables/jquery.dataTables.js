@@ -1232,7 +1232,7 @@
 
 				/*
 				 * Final init
-				 * Cache the header, body and footer as required, creating them if needed
+				 * Cache the header, body and Footer as required, creating them if needed
 				 */
 
 				// Work around for Webkit bug 83867 - store the caption-side before removing from doc
@@ -1254,7 +1254,7 @@
 
 				var tfoot = $this.children('tfoot');
 				if ( tfoot.length === 0 && captions.length > 0 && (oSettings.oScroll.sX !== "" || oSettings.oScroll.sY !== "") ) {
-					// If we are a scrolling table, and no footer has been given, then we need to create
+					// If we are a scrolling table, and no Footer has been given, then we need to create
 					// a tfoot element for the caption element to be appended to
 					tfoot = $('<tfoot/>').appendTo($this);
 				}
@@ -3281,12 +3281,12 @@
 		/* ARIA role for the rows */
 		$(thead).children('tr').attr('role', 'row');
 
-		/* Deal with the footer - add classes if required */
+		/* Deal with the Footer - add classes if required */
 		$(thead).children('tr').children('th, td').addClass( classes.sHeaderTH );
 		$(tfoot).children('tr').children('th, td').addClass( classes.sFooterTH );
 
-		// Cache the footer cells. Note that we only take the cells from the first
-		// row in the footer. If there is more than one row the page wants to
+		// Cache the Footer cells. Note that we only take the cells from the first
+		// row in the Footer. If there is more than one row the page wants to
 		// interact with, they need to use the table().foot() method. Note also this
 		// allows cells to be used for multiple columns using colspan
 		if ( tfoot !== null ) {
@@ -3305,7 +3305,7 @@
 
 
 	/**
-	 * Draw the header (or footer) element based on the column visibility states. The
+	 * Draw the header (or Footer) element based on the column visibility states. The
 	 * methodology here is to use the layout array from _fnDetectHeader, modified for
 	 * the instantaneous column visibility, to construct the new layout. The grid is
 	 * traversed over cell at a time in a rows x columns grid fashion, although each
@@ -3527,7 +3527,7 @@
 				} ).html( sZero ) )[0];
 		}
 
-		/* Header and footer callbacks */
+		/* Header and Footer callbacks */
 		_fnCallbackFire( oSettings, 'aoHeaderCallback', 'header', [ $(oSettings.nTHead).children('tr')[0],
 			_fnGetDataMaster( oSettings ), iDisplayStart, iDisplayEnd, aiDisplay ] );
 
@@ -3747,7 +3747,7 @@
 	 * to the cell that that point in the grid (regardless of col/rowspan), such that
 	 * any column / row could be removed and the new grid constructed
 	 *  @param array {object} aLayout Array to store the calculated layout in
-	 *  @param {node} nThead The header/footer element for the table
+	 *  @param {node} nThead The header/Footer element for the table
 	 *  @memberof DataTable#oApi
 	 */
 	function _fnDetectHeader ( aLayout, nThead )
@@ -4747,7 +4747,7 @@
 		/* Show the display HTML options */
 		_fnAddOptionsHtml( settings );
 
-		/* Build and draw the header / footer for the table */
+		/* Build and draw the header / Footer for the table */
 		_fnBuildHead( settings );
 		_fnDrawHead( settings, settings.aoHeader );
 		_fnDrawHead( settings, settings.aoFooter );
@@ -5225,7 +5225,7 @@
 
 
 	/**
-	 * Update the header, footer and body tables for resizing - i.e. column
+	 * Update the header, Footer and body tables for resizing - i.e. column
 	 * alignment.
 	 *
 	 * Welcome to the most horrible function DataTables. The process that this
@@ -5309,7 +5309,7 @@
 			footerSrcEls = footerCopy.find('tr');
 		}
 
-		// Clone the current header and footer elements and then place it into the inner table
+		// Clone the current header and Footer elements and then place it into the inner table
 		headerCopy = header.clone().prependTo( table );
 		headerTrgEls = header.find('tr'); // original header is in its own table
 		headerSrcEls = headerCopy.find('tr');
@@ -5389,7 +5389,7 @@
 
 		$(headerSrcEls).height(0);
 
-		/* Same again with the footer if we have one */
+		/* Same again with the Footer if we have one */
 		if ( footer )
 		{
 			_fnApplyToChildren( zeroOut, footerSrcEls );
@@ -5411,7 +5411,7 @@
 		 * 3. Apply the measurements
 		 */
 
-		// "Hide" the header and footer that we used for the sizing. We need to keep
+		// "Hide" the header and Footer that we used for the sizing. We need to keep
 		// the content of the cell so that the width applied to the header and body
 		// both match, but we want to hide it completely. We want to also fix their
 		// width to what they currently are
@@ -5481,12 +5481,12 @@
 			}
 		}
 
-		/* Finally set the width's of the header and footer tables */
+		/* Finally set the width's of the header and Footer tables */
 		var iOuterWidth = table.outerWidth();
 		divHeaderTable[0].style.width = _fnStringToCss( iOuterWidth );
 		divHeaderInnerStyle.width = _fnStringToCss( iOuterWidth );
 
-		// Figure out if there are scrollbar present - if so then we need a the header and footer to
+		// Figure out if there are scrollbar present - if so then we need a the header and Footer to
 		// provide a bit more space to allow "overflow" scrolling (i.e. past the scrollbar)
 		var bScrolling = table.height() > divBodyEl.clientHeight || divBody.css('overflow-y') == "scroll";
 		var padding = 'padding' + (browser.bScrollbarLeft ? 'Left' : 'Right' );
@@ -5626,15 +5626,15 @@
 			tmpTable.find('tbody tr').remove();
 			var tr = $('<tr/>').appendTo( tmpTable.find('tbody') );
 
-			// Clone the table header and footer - we can't use the header / footer
+			// Clone the table header and Footer - we can't use the header / Footer
 			// from the cloned table, since if scrolling is active, the table's
-			// real header and footer are contained in different table tags
+			// real header and Footer are contained in different table tags
 			tmpTable.find('thead, tfoot').remove();
 			tmpTable
 				.append( $(oSettings.nTHead).clone() )
 				.append( $(oSettings.nTFoot).clone() );
 
-			// Remove any assigned widths from the footer (from scrolling)
+			// Remove any assigned widths from the Footer (from scrolling)
 			tmpTable.find('tfoot th, tfoot td').css('width', '');
 
 			// Apply custom sizing to the cloned header
@@ -7469,7 +7469,7 @@
 	} );
 
 
-	_api_registerPlural( 'tables().footer()', 'table().footer()' , function () {
+	_api_registerPlural( 'tables().Footer()', 'table().Footer()' , function () {
 		return this.iterator( 'table', function ( ctx ) {
 			return ctx.nTFoot;
 		}, 1 );
@@ -8662,7 +8662,7 @@
 		}, 1 );
 	} );
 
-	_api_registerPlural( 'columns().footer()', 'column().footer()', function ( selector, opts ) {
+	_api_registerPlural( 'columns().Footer()', 'column().Footer()', function ( selector, opts ) {
 		return this.iterator( 'column', function ( settings, column ) {
 			return settings.aoColumns[column].nTf;
 		}, 1 );
@@ -9848,9 +9848,9 @@
 		"nTh": null,
 
 		/**
-		 * Unique footer TH/TD element for this column (if there is one). Not used
+		 * Unique Footer TH/TD element for this column (if there is one). Not used
 		 * in DataTables as such, but can be used for plug-ins to reference the
-		 * footer for each column.
+		 * Footer for each column.
 		 *  @type node
 		 *  @default null
 		 */
@@ -10563,7 +10563,7 @@
 		 * When vertical (y) scrolling is enabled, DataTables will force the height of
 		 * the table's viewport to the given height at all times (useful for layout).
 		 * However, this can look odd when filtering data down to a small data set,
-		 * and the footer is left "floating" further down. This parameter (when
+		 * and the Footer is left "floating" further down. This parameter (when
 		 * enabled) will cause DataTables to collapse the table's viewport down when
 		 * the result set will fit within the given Y height.
 		 *  @type boolean
@@ -10761,10 +10761,10 @@
 
 
 		/**
-		 * Identical to fnHeaderCallback() but for the table footer this function
-		 * allows you to modify the table footer on every 'draw' event.
+		 * Identical to fnHeaderCallback() but for the table Footer this function
+		 * allows you to modify the table Footer on every 'draw' event.
 		 *  @type function
-		 *  @param {node} foot "TR" element for the footer
+		 *  @param {node} foot "TR" element for the Footer
 		 *  @param {array} data Full table data (as derived from the original HTML)
 		 *  @param {int} start Index for the current display starting point in the
 		 *    display array
@@ -11926,7 +11926,7 @@
 		 *     <li>The following constants are allowed:
 		 *       <ul>
 		 *         <li>'H' - jQueryUI theme "header" classes ('fg-toolbar ui-widget-header ui-corner-tl ui-corner-tr ui-helper-clearfix')</li>
-		 *         <li>'F' - jQueryUI theme "footer" classes ('fg-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix')</li>
+		 *         <li>'F' - jQueryUI theme "Footer" classes ('fg-toolbar ui-widget-header ui-corner-bl ui-corner-br ui-helper-clearfix')</li>
 		 *       </ul>
 		 *     </li>
 		 *     <li>The following syntax is expected:
@@ -13305,7 +13305,7 @@
 		"aoHeader": [],
 
 		/**
-		 * Store information about the table's footer
+		 * Store information about the table's Footer
 		 *  @type array
 		 *  @default []
 		 */
@@ -13392,7 +13392,7 @@
 		"aoHeaderCallback": [],
 
 		/**
-		 * Callback function for the footer on each draw.
+		 * Callback function for the Footer on each draw.
 		 *  @type array
 		 *  @default []
 		 */
@@ -13869,12 +13869,12 @@
 		"iTabIndex": 0,
 
 		/**
-		 * DIV container for the footer scrolling table if scrolling
+		 * DIV container for the Footer scrolling table if scrolling
 		 */
 		"nScrollHead": null,
 
 		/**
-		 * DIV container for the footer scrolling table if scrolling
+		 * DIV container for the Footer scrolling table if scrolling
 		 */
 		"nScrollFoot": null,
 
@@ -14460,7 +14460,7 @@
 
 	$.extend( DataTable.ext.classes, {
 		"sTable": "dataTable",
-		"sNoFooter": "no-footer",
+		"sNoFooter": "no-Footer",
 
 		/* Paging buttons */
 		"sPageButton": "paginate_button",
