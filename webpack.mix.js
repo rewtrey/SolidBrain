@@ -12,5 +12,12 @@ const mix = require('laravel-mix');
  */
 
 mix.js('resources/js/app.js', 'public/js')
+    .js('resources/js/canvas.js', 'public/js')
+    .js('resources/js/script.js', 'public/js')
+    .js('resources/js/sb-admin-2.js', 'public/js')
+    .js('resources/js/sb-admin-2.min.js', 'public/js')
     .vue()
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/style.scss', 'public/css')
+    .sass('resources/sass/_variables.scss', 'public/css')
+    .sass('resources/sass/app.scss', 'public/css')
+    .sass('resources/sass/sb-admin-2.scss', 'public/css');

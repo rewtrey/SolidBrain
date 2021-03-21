@@ -1,0 +1,30 @@
+.other-link{
+  padding: 18px 24px;
+  border-top: 1px solid $default;
+  &_offset{
+    margin-top: -125px;
+  }
+  &__item{
+    color: $white;
+    font-size: 16px;
+    transition: color 0.25s;
+    padding: 3px 0;
+    &:hover{
+      color: $default;
+      text-decoration: none;
+    }
+  }
+  &-text{
+    color: $contactColor;
+    font-size: 18px;
+    @include Montserrat;
+    @include fontBoldBlack;
+    padding-bottom: 150px;
+    padding-left: 15px;
+  }
+}
+
+.banner-col-offset{
+  padding-left: 100px;
+  padding-top: 16px;
+}

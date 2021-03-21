@@ -1,0 +1,28 @@
+.control{
+  border:1px solid $borderColor;
+  transition: background 0.25s;
+  padding: 46px;
+  .icons_arrow{
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+  &:hover{
+    background: $white;
+    text-decoration: none;
+    .icons_arrow{
+      opacity: 1;
+    }
+    .title{
+      color: $default;
+    }
+    .text{
+      color: $textColor;
+    }
+  }
+  &:first-child{
+    border-right: none;
+  }
+  &__header{
+    margin-bottom: 40px;
+  }
+}

@@ -1,0 +1,28 @@
+.benefits {
+  &__block {
+	&_back {
+	  background: #1D1F2E;
+	  backdrop-filter: blur(20px);
+	}
+	&_front {
+	  background: rgba(28, 35, 61, 0.3);
+	  backdrop-filter: blur(10px);
+	}
+  }
+  &__item {
+	position: relative;
+	cursor: pointer;
+  }
+  &__name {
+	font-size: 24px;
+	@include Montserrat;
+	@include fontBoldBlack;
+	color: $white;
+	line-height: 135%;
+  }
+  &__text{
+	font-size: 18px;
+	color: $white-dark;
+	@include fontRegular;
+  }
+}

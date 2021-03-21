@@ -1,0 +1,29 @@
+.list{
+  list-style: none;
+  &_offset{
+	padding: 50px 60px;
+  }
+  &__item{
+	color: $white;
+	font-size: 14px;
+	@include fontBold;
+	line-height: 150%;
+	position: relative;
+	&:before{
+	  width: 5px;
+	  height: 5px;
+	  background: $default;
+	  content: '';
+	  position: absolute;
+	  top: 3px;
+	  left: 0;
+	  display: block;
+	}
+	&_offset{
+	  padding-left: 10px;
+	  &:not(:last-child){
+		margin-bottom: 20px;
+	  }
+	}
+  }
+}

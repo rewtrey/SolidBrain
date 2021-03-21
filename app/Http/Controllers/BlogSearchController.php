@@ -28,12 +28,7 @@ class BlogSearchController extends Controller
             $resalt = Blog::select("title as name")
                 ->where("title","LIKE","%{$search_text}%")
                 ->get();
-
-/*
-         $resalt = Blog::select("title as name")
-             ->where("title","LIKE","%{$request->input('query')}%")
-             ->get();
-*/}
+        }
         return response()->json($resalt);
     }
 

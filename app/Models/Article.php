@@ -11,7 +11,6 @@ class Article extends Model
 {
     protected $fillable = ['title', 'description_short', 'description', 'slug', 'published', 'meta_keyword'];
 
-    // Mutators
     public function setSlugAttribute($value)
     {
         $this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . "-", '-');

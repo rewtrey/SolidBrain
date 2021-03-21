@@ -9,9 +9,8 @@
     @endif
 </select>
 
-<label for="">Name</label>
-<input type="text" class="form-control" name="title" placeholder="title" value="{{$category->title ?? ""}}" required>
-
+<label for="">Category name</label>
+<input type="text" class="form-control" name="title" placeholder="Category name" value="{{$category->title ?? ""}}" required>
 
 <label for="">Parent category</label>
 <select class="form-control" name="parent_id">

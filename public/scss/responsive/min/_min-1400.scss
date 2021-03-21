@@ -1,0 +1,24 @@
+@media (min-width: 1350px) {
+  .container{
+	max-width: 1270px;
+  }
+  .nav {
+    &__link {
+      &_offset {
+        &:not(:last-child) {
+          margin-right: 35px;
+        }
+      }
+      &_border{
+        &:before{
+          margin-right: 35px;
+        }
+      }
+    }
+  }
+  .navbar-collapse{
+    &_offset{
+      padding-left: 80px;
+    }
+  }
+}

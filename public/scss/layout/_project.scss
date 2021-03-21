@@ -1,0 +1,47 @@
+.section{
+  &__project{
+    padding: 100px 0;
+    &_bg{
+      background: $bgBanner;
+    }
+  }
+}
+
+.project{
+  &-list{
+    &_offset{
+      margin-top: 50px;
+    }
+    &-item{
+      display: block;
+      color: white;
+      text-decoration: none;
+      &:hover{
+        text-decoration: none;
+        .project-list-item{
+          &__name{
+            color: $default;
+          }
+          &__desc{
+            color: $white;
+          }
+        }
+      }
+      &__name{
+        @include Montserrat;
+        @include fontBoldBlack;
+        font-size: 24px;
+      }
+      &__desc{
+        font-size: 18px;
+      }
+      &__body{
+        padding: 24px;
+
+      }
+      &__img{
+        margin-top: -200px;
+      }
+    }
+  }
+}

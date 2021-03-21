@@ -1,0 +1,92 @@
+.icons {
+  display: inline-block;
+  position: relative;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
+.icons{
+  &_benefits {
+    width: 45px;
+    height: 38px;
+    background-image: $iconsBenefits;
+  }
+  &_scroll{
+    width: 17px;
+    height: 30px;
+    background-image: $iconsScroll;
+  }
+  &_line{
+      height: 32px;
+      width: 1px;
+      background: #F0F3F6;
+  }
+  &__tech{
+    width: 50px;
+    height: 50px;
+    &_web{
+      background-image: $iconsTechWeb;
+    }
+    &_mob{
+      background-image: $iconsTechMob;
+    }
+    &_cloud{
+      background-image: $iconsTechCloud;
+    }
+    &_digital{
+      background-image: $iconsTechDigital;
+    }
+    &_desktop{
+      background-image: $iconsTechDesktop;
+    }
+    &_test{
+      background-image: $iconsTechTest;
+    }
+  }
+  &__industries{
+    width: 30px;
+    height: 30px;
+    &_ecommers{
+      background-image: $iconsEcommert;
+    }
+    &_automotive{
+      background-image: $iconsAutomotive;
+    }
+    &_automation{
+      background-image: $iconsAutomation;
+    }
+    &_education{
+      background-image: $iconsEducation;
+    }
+    &_travel{
+      background-image: $iconsTravel;
+    }
+  }
+  &_arrow{
+    width: 7px;
+    height: 7px;
+    background-image: $iconsArrow;
+  }
+  &_control-pos{
+    margin-left: 24px;
+    top: 4px;
+  }
+  &_menu{
+    width: 16px;
+    height: 12px;
+    background-image: $iconsMenu;
+  }
+  &__arrow{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: rgba(111, 119, 144, 0.2);
+    &_left{
+      background-image: $iconsArrowLeft;
+    }
+    &_right{
+      background-image: $iconsArrowRight;
+    }
+  }
+}
+

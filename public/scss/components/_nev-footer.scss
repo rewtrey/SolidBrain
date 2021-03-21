@@ -1,0 +1,29 @@
+.nav-footer {
+  &_offset {
+    &:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+  &__link {
+    display: block;
+    color: $footerLink;
+    font-size: 14px;
+    transition: color 0.25s;
+    &:hover {
+      text-decoration: none;
+      color: $default;
+    }
+    &:not(:last-child) {
+      margin-bottom: 18px;
+    }
+  }
+  &__name {
+    font-size: 16px;
+    @include fontBold;
+    color: $footerLink;
+    display: block;
+    &_offset {
+      margin-bottom: 20px;
+    }
+  }
+}

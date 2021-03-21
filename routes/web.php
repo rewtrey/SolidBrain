@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\BlogController;
 use App\Http\Controllers\Admin\FooterController;
 use App\Http\Controllers\Admin\RevisionContactUsController;
 use App\Http\Controllers\Admin\DownloadFileController;
+use App\Http\Controllers\Admin\UserManagment\UserController;
+use App\Http\Controllers\Admin\UserManagment\RoleController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\BlogSearchController;
 use App\Http\Controllers\ContactFormController;
@@ -57,6 +59,11 @@ Route::prefix('admin' )->middleware('auth')->group(function () {
     Route::resource('contact-us', RevisionContactUsController::class, ['as' => 'admin']);
     Route::get('/download/{file}', [DownloadFileController::class, 'download'])->name('downloadfile');
     Route::post('ckeditor/image_upload', [App\Http\Controllers\CKEditorController::class, 'upload'])->name('upload');
+
+
+    Route::prefix('user_managment')->group(function() {
+        Route::resource('/user', UserController::class, ['as' => 'admin.user_managment']);
+    });
 });
 
 

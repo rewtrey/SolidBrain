@@ -1,0 +1,14 @@
+.section{
+  &__banner{
+    background: $bgBanner;
+    &_offset{
+      &-t{
+        padding-top: 150px;
+      }
+      &-y{
+        padding-top: 150px;
+        padding-bottom: 70px;
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@media (min-width: 768px) {
+  .section-main {
+    &__title {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-image: image-url('blure-text.png');
+    }
+  }
+  .section {
+    &_offset {
+      &-t {
+        padding-top: 150px;
+      }
+      &-b {
+        padding-bottom: 150px;
+      }
+      &-y {
+        padding-top: 150px;
+        padding-bottom: 150px;
+        &-sm {
+          padding-top: 100px;
+          padding-bottom: 100px;
+        }
+      }
+    }
+  }
+  .services {
+    &__text {
+      &_offset {
+        margin-bottom: 73px;
+      }
+    }
+  }
+}

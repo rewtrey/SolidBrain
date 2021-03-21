@@ -1,0 +1,75 @@
+.header {
+  z-index: 1111;
+  transition: 0.25s background;
+  &:hover {
+    background: $white;
+    box-shadow: 0 0 15px rgba(39, 92, 141, 0.2);
+    .nav {
+      &__link {
+        color: $black-light;
+        &:hover {
+          color: $default;
+          &:after {
+            border-color: $default;
+          }
+        }
+        &:before {
+          border-color: $black-light;
+        }
+      }
+    }
+    .dropdown-toggle {
+      &:after {
+        border-color: $black-light;
+      }
+    }
+    .navbar-toggler{
+      path{
+        fill: $black-light;
+      }
+    }
+    .logo-color {
+		fill: $black-light;
+    }
+  }
+  &_fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  &_offset {
+    padding: 22px 0;
+  }
+  &_bg {
+    background: $white;
+    box-shadow: 0 0 15px rgba(39, 92, 141, 0.2);
+    .nav {
+      &__link {
+        color: $black-light;
+        &:hover {
+          color: $default;
+          &:after {
+            border-color: $default;
+          }
+        }
+        &:before {
+          border-color: $black-light;
+        }
+      }
+    }
+    .dropdown-toggle {
+      &:after {
+        border-color: $black-light;
+      }
+    }
+    .navbar-toggler{
+      path{
+        fill: $black-light;
+      }
+    }
+    .logo-color {
+      fill: $black-light;
+    }
+  }
+}

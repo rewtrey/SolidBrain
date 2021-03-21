@@ -1,0 +1,11 @@
+.first-letter{
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: image-url('blure-text.png');
+  @include Montserrat;
+  @include fontBoldBlack;
+  font-size: 150px;
+  height: 112px;
+  display: inline-block;
+  line-height: 111px;
+}

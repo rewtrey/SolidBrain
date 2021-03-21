@@ -1,0 +1,38 @@
+/*** fonts ***/
+$fontName: 'Open Sans';
+
+$typeSs:sans-serif;
+$typeS:serif;
+$typeC:cursive;
+$fontType: $typeSs;
+
+$fontFamily: $fontName, $fontType;
+
+$wLight: 300;
+$wRegular: 400;
+$wMedium: 500;
+$wSemiBold: 600;
+$wBold: 700;
+$wBlack: 800;
+$wBoldBlack: 900;
+
+$sNormal: normal;
+$sItalic: italic;
+
+$fontPath: "../fonts";
+/*************/
+
+$breadcrumb-divider: quote(">");
+
+
+
+/***offset***/
+$offset-xl: 80px;
+$offset-md: 55px;
+$offset-sm: 45px;
+
+
+/***radius***/
+$radius-sm: 2px;
+
+

@@ -1,0 +1,19 @@
+.social{
+  &__item{
+    display: block;
+    path{
+      transition: fill 0.25s;
+    }
+    &:hover{
+      path{
+        fill: $default;
+      }
+    }
+    &:not(:last-child){
+      margin-right: 8px;
+    }
+  }
+  &_offset{
+    margin-top: 60px;
+  }
+}

@@ -1,0 +1,74 @@
+.carousel {
+  &__fade {
+    .carousel-item {
+      opacity: 0;
+      transition-duration: .6s;
+      transition-property: opacity;
+    }
+  }
+  &_box {
+    background: $white;
+    box-shadow: 0 0 50px rgba(6, 39, 70, 0.1);
+    border-radius: $radius-sm;
+  }
+  &_offset {
+    padding: 47px 40px 0;
+  }
+  &_quotes {
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 32px;
+      background: $iconsQuotes;
+      top: -15px;
+    }
+  }
+  &-arrow {
+    .carousel-control-prev,
+    .carousel-control-next {
+      position: relative;
+    }
+  }
+  &-counter {
+    &_offset {
+      padding: 0 35px;
+    }
+  }
+  &-control {
+    path {
+      transition: fill 0.25s;
+    }
+    &:hover {
+      path {
+        fill: $default;
+      }
+    }
+  }
+  &-inner {
+    &_visible {
+      overflow: visible;
+    }
+  }
+}
+
+.carousel__fade .carousel-item.active,
+.carousel__fade .carousel-item-next.carousel-item-left,
+.carousel__fade .carousel-item-prev.carousel-item-right {
+  opacity: 1;
+}
+
+.carousel__fade .active.carousel-item-left,
+.carousel__fade .active.carousel-item-right {
+  opacity: 0;
+}
+
+.carousel__fade .carousel-item-next,
+.carousel__fade .carousel-item-prev,
+.carousel__fade .carousel-item.active,
+.carousel__fade .active.carousel-item-left,
+.carousel__fade .active.carousel-item-prev {
+  transform: translateX(0);
+  transform: translate3d(0, 0, 0);
+}

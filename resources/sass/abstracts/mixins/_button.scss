@@ -1,0 +1,47 @@
+@mixin button-bg($bg, $bg-hover, $color, $border-color) {
+  background: $bg;
+  border-color:$border-color;
+  color: $color;
+  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  &:hover {
+	background:$bg-hover;
+	color: $color !important;
+	border-color:$bg-hover;
+  }
+  &:active {
+	background:$bg-hover;
+	color: $color !important;
+	border-color:$bg-hover;
+  }
+}
+
+@mixin button-link($bg, $color) {
+  color: $color !important;
+  &:before {
+	background:$bg;
+  }
+  path{
+	stroke: $color;
+  }
+}
+
+@mixin button-outline($color, $hover-color) {
+  color: $color;
+  transition: color 0.3s ease;
+  path{
+    stroke: $color;
+    transition: stroke 0.3s ease;
+  }
+  &:hover {
+    color: $hover-color !important;
+    path{
+      stroke: $hover-color;
+    }
+  }
+  &:active {
+    color: $hover-color !important;
+    path{
+      stroke: $hover-color;
+    }
+  }
+}

@@ -8,12 +8,12 @@ use Illuminate\Support\Str;
 
 class Category extends Model
 {
-    protected $fillable = ['title', 'parent_id', 'published', 'created_by', 'modified_by'];
+    protected $fillable = ['title', 'parent_id', 'published', 'created_by', 'modified_by', 'slug'];
 
 
     public function children()
     {
-        return $this->hasMany(self::class, 'parent_id');
+       return $this->hasMany(self::class, 'parent_id');
     }
 
     public function setSlugAttribute($value)
@@ -44,4 +44,5 @@ class Category extends Model
         return $this->morphedByMany('App\Models\Footer', 'categoryable');
 
     }
+
 }

@@ -1,0 +1,58 @@
+.grid{
+  &__item{
+    border-right: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+    position: relative;
+    &:nth-child(-n+3){
+      border-top:1px solid $borderColor;
+    }
+    &:first-child, &:nth-child(4){
+      border-left: 1px solid $borderColor;
+    }
+    &_offset{
+      padding: 40px;
+    }
+    &:first-child{
+      &:after{
+        @include circle;
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 50%);
+      }
+      &:before{
+        @include circle;
+        top: 0;
+        right: 0;
+        transform: translate(50%, -50%);
+      }
+    }
+    &:nth-child(3){
+      &:after{
+        @include circle;
+        bottom: 0;
+        right: 0;
+        transform: translate(50%, 50%);
+      }
+      &:before{
+        @include circle;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+      }
+    }
+    &:nth-child(2), &:nth-child(5){
+      &:after{
+        @include circle;
+        bottom: 0;
+        right: 0;
+        transform: translate(50%, 50%);
+      }
+      &:before {
+        @include circle;
+        bottom: 0;
+        left: 0;
+        transform: translate(-50%, 50%);
+      }
+    }
+  }
+}

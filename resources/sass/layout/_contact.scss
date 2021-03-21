@@ -1,0 +1,28 @@
+.contact{
+  &_bg{
+    background: image-url('contact-bg.jpg') no-repeat 50%;
+    background-size: cover;
+  }
+  &__box{
+    background: rgba(111, 119, 145, 0.2);
+    backdrop-filter: blur(15px);
+  }
+  &__type{
+    color: $white;
+    font-size: 14px;
+    @include Montserrat;
+    @include fontBoldBlack;
+  }
+  &__value{
+    font-size: 14px;
+    color: $contactColor;
+    &:not(:last-child){
+      margin-bottom: 15px;
+    }
+  }
+  &__item{
+    &:not(:last-child){
+      margin-bottom: 35px;
+    }
+  }
+}

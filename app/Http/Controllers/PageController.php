@@ -11,7 +11,7 @@ class PageController extends Controller
 {
     public function category($slug)
     {
-        $category = Category::whereSlug($slug)->firstorFail();
+        $category = Category::where('slug', $slug)->first();
         $articles= $category
             ->articles()
             ->where('published', 1)

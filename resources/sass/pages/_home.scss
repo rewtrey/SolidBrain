@@ -1,0 +1,239 @@
+.section-main {
+  height: 100vh;
+  &__title {
+    @include Montserrat;
+    @include fontBoldBlack;
+    text-transform: uppercase;
+    z-index: 111;
+    position: relative;
+    padding-top: 75px;
+  }
+}
+
+#canvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.block-main {
+  &_bg {
+    background: rgba(111, 119, 145, 0.2);
+    backdrop-filter: blur(10px);
+  }
+  &_offset {
+    padding: 32px;
+  }
+  &__text {
+    color: $white;
+    font-size: 16px;
+    line-height: 160%;
+  }
+  &__col {
+    &-center {
+      width: 6%;
+    }
+  }
+}
+
+.container {
+  &__main {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    height: 100vh;
+  }
+}
+
+.col-6 {
+  -ms-flex: 0 0 50%;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-12 {
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.section {
+  &__project {
+    &_bg {
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    &_offset{
+      padding-top: 70px;
+    }
+  }
+  &__task-assessment{
+    padding: 75px 0;
+  }
+  &__contact{
+    margin-bottom: -140px;
+  }
+}
+
+.block {
+  &_border {
+    border-right: 1px solid $default;
+  }
+  &__label {
+    font-size: 18px;
+    @include Montserrat;
+    @include fontBoldBlack;
+    color: $labelColor;
+  }
+  &__title {
+    font-size: 36px;
+    color: $titleColor;
+    @include fontRegular;
+    &_white{
+      color: $white;
+    }
+    &_offset {
+      margin-bottom: 60px;
+
+    }
+  }
+  &__text {
+    font-size: 18px;
+    color: $textColor;
+    @include fontRegular;
+    line-height: 25px;
+    &_border {
+      border-left: 1px solid $default;
+      padding-left: 15px;
+    }
+  }
+}
+
+.services {
+  &_bg {
+    background: #1D1F2E;
+    backdrop-filter: blur(20px);
+  }
+  &_offset {
+    margin-top: 70px;
+  }
+  &__text{
+    font-size: 16px;
+    @include fontRegular;
+    color: $white;
+  }
+}
+
+.nav {
+  &-wrapper {
+    width: 360px;
+    min-height: 545px;
+    .btn {
+      position: absolute;
+      bottom: 65px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      max-width: 265px;
+      text-align: center;
+      display: block;
+    }
+    &_offset {
+      padding: 20px 35px 130px 35px;
+    }
+    &_blur {
+      background: rgba(111, 119, 145, 0.2);
+      backdrop-filter: blur(20px);
+    }
+  }
+  &__tab {
+    &_bg {
+      background-image: image-url('service.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: 50%;
+    }
+
+  }
+  &__button {
+    font-size: 18px;
+    @include Montserrat;
+    @include fontBoldBlack;
+    background: none;
+    border: none;
+    display: block;
+    color: $serviceTabColor;
+    cursor: pointer;
+    transition: all 0.25s;
+    &:hover {
+      color: $white;
+      padding-left: 0;
+      text-decoration: none;
+    }
+    &.active {
+      font-size: 24px;
+      color: $white;
+      padding-left: 0;
+    }
+    &_offset {
+      padding-left: 20px;
+      &:not(:last-child) {
+        margin-bottom: 25px;
+      }
+    }
+    &_h{
+      height: 46px;
+    }
+  }
+}
+
+.nav-tab {
+  &-blur {
+    background: rgba(28, 35, 61, 0.3);
+    backdrop-filter: blur(10px);
+    height: 100%;
+  }
+}
+
+body{
+  background: #F8FAFC;
+}
+
+.main {
+  z-index: 11;
+  position: relative;
+}
+
+.bg-white {
+  background: $white;
+}
+
+
+.about-project{
+ &_offset{
+   padding-top: 25px;
+ }
+  &__text{
+    font-size: 16px;
+    @include fontBold;
+    color: $white-dark;
+    &_offset{
+      margin-bottom: 80px;
+    }
+  }
+  &-img{
+    margin-top: -100px;
+  }
+}
+

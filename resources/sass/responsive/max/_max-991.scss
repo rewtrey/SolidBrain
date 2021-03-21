@@ -1,0 +1,55 @@
+@media (max-width: 992px) {
+  .nav-tab {
+    &_offset {
+      padding: 15px 20px;
+    }
+  }
+  .tab-content{
+    &_offset{
+      padding: 20px;
+    }
+  }
+  .services{
+    &_offset{
+      padding: 15px 15px 48px;
+    }
+  }
+  .about-project-img{
+    max-height: 250px;
+    float: right;
+  }
+  .team{
+    &__item{
+      img{
+        max-width: 160px;
+      }
+    }
+  }
+  .block {
+    &_offset {
+      &-m {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  .col-contact-offset{
+    padding: 25px;
+  }
+  .form{
+    &-group{
+      &_offset{
+        margin-bottom: 30px;
+      }
+    }
+  }
+  .contact {
+    &__box{
+      &_offset{
+        padding: 48px 25px;
+      }
+    }
+  }
+}
+
+

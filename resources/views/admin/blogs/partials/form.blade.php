@@ -10,7 +10,7 @@
 </select>
 
 <label for="">Title</label>
-<textarea class="form-control" id="title" name="title">{!! $blog->title ?? "" !!}</textarea>
+<textarea class="form-control" id="title" name="title">{{ $blog->title ?? "" }}</textarea>
 
 <label for="">Parent category</label>
 <select class="form-control" name="categories[]" multiple="">
@@ -18,7 +18,7 @@
 </select>
 
 <label for="">Description Short</label>
-<textarea class="form-control" id="description_short" name="description short">{!! $blog->description_short ?? ""!!}</textarea>
+<textarea class="form-control" id="description_short" name="description short">{{ $blog->description_short ?? ""}}</textarea>
 
 <hr />
 

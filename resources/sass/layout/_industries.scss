@@ -1,0 +1,86 @@
+.industries{
+  &__item{
+    border-radius: 2px;
+    transition: 0.25s background, 0.25s box-shadow;
+    &_h{
+      height: 233px;
+    }
+    &:hover{
+      background: $white;
+      box-shadow: 0 0 50px rgba(6, 39, 70, 0.1);
+      .industries{
+        &__icons{
+          &_bg{
+            background: rgba(29, 31, 46, 0.3);
+          }
+        }
+      }
+    }
+  }
+  &__icons{
+    border-radius: 50%;
+    border:1px solid $borderColor;
+    position: relative;
+    &_sm{
+      width: 69px;
+      height: 69px;
+    }
+    &_md{
+      width: 113px;
+      height: 113px;
+    }
+    &_bg{
+      background: rgba(164, 172, 172, 0.2);
+      backdrop-filter: blur(20px);
+      transition: 0.25s background;
+    }
+    &_position{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-left: -56.5px;
+      margin-top: -56.5px;
+    }
+  }
+  &__box-icon{
+    width: 69px;
+    height: 69px;
+    position: relative;
+    &:before{
+      width: 60px;
+      height: 60px;
+      content: '';
+      display: block;
+      position: absolute;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      transform: translate(60%, -30%);
+      top: 0;
+    }
+    &_ecommers{
+      &:before{
+        background-image: $iconsIndEcommert;
+      }
+    }
+    &_automotive{
+      &:before{
+        background-image: $iconsIndEcommert;
+      }
+    }
+    &_automation{
+      &:before{
+        background-image: $iconsIndAutomation;
+      }
+    }
+    &_education{
+      &:before{
+        background-image: $iconsIndEducation;
+      }
+    }
+    &_travel{
+      &:before{
+        background-image: $iconsIndTravel;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.btn {
+  font-size: 16px;
+  display: inline-flex;
+  text-align: center;
+  white-space: nowrap;
+  &__default {
+    @include button-bg($default, darken($default, 20%), $white, $default);
+    border-radius: 40px;
+  }
+  &_w{
+    min-width: 215px;
+  }
+  &_offset{
+    &-t{
+      margin-top: 40px;
+    }
+  }
+  &__link {
+    position: relative;
+    z-index: 1;
+    &_default {
+      @include button-link($default, $white);
+    }
+    &_black {
+      @include button-link($black, $white);
+    }
+    &_gray {
+      @include button-link($gray, $black-light);
+    }
+    &:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      border-radius: 28px;
+      width: 52px;
+      height: 52px;
+      transition: all .3s ease;
+      z-index: -1;
+    }
+    svg {
+      margin-left: 15px;
+      transform: translateX(-5px);
+      transition: all .3s ease;
+    }
+    &:hover {
+      &:before {
+        width: 100%;
+      }
+      svg {
+        transform: translateX(0);
+      }
+    }
+  }
+  &__outline {
+    border: none;
+    padding: 0;
+    svg{
+      margin-left: 15px;
+      transform: translateX(-5px);
+      transition: all .3s ease;
+    }
+    &:hover {
+      svg {
+        transform: translateX(0);
+      }
+    }
+    &_default {
+      @include button-outline($default,  darken($default, 20%));
+    }
+  }
+}

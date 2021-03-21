@@ -1,0 +1,23 @@
+.article{
+  &__item{
+    &:hover{
+      a{
+        text-decoration: none;
+      }
+      .article__title{
+        color: $default;
+      }
+    }
+  }
+  &__title{
+    font-size: 18px;
+    color: $titleColor;
+    transition: color 0.25s;
+  }
+  &__date{
+    font-size: 12px;
+    @include Montserrat;
+    @include fontBoldBlack;
+    color: $labelColor;
+  }
+}

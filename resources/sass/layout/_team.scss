@@ -1,0 +1,8 @@
+.team{
+  &_bg{
+    background: image-url('team-bg.jpg') no-repeat 0 0;
+  }
+  &_offset{
+    padding: 78px 0;
+  }
+}

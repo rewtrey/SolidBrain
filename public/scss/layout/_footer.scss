@@ -1,0 +1,17 @@
+.footer{
+  &_bg{
+    background: $bgFooter;
+    backdrop-filter: blur(20px);
+  }
+  &_offset{
+    padding-top: 260px;
+    padding-bottom: 100px;
+  }
+  &__text{
+    font-size: 14px;
+    color: $white;
+    &_offset{
+      margin: 70px 0 65px;
+    }
+  }
+}

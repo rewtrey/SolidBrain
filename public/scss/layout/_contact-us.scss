@@ -1,0 +1,15 @@
+.section {
+  &__contact-us {
+    padding: 50px 0 60px;
+    &_bg {
+      background: image-url('bg-contact-us.jpg') no-repeat 50% / cover;
+    }
+  }
+}
+
+.contact-us-text{
+  @include Montserrat;
+  @include fontBoldBlack;
+  font-size: 36px;
+  color: $white;
+}

@@ -1,0 +1,134 @@
+@media (min-width: 992px) {
+  .block-main {
+    &__col {
+      &-left {
+        width: 47%;
+      }
+      &-right {
+        width: 47%;
+      }
+    }
+  }
+
+  .nav-tab {
+    &_offset {
+      padding: 50px 35px;
+    }
+  }
+  .tab-content {
+    &_offset {
+      padding: 50px 70px;
+    }
+  }
+
+  .block {
+    &_offset {
+      &-left {
+          padding-left: 97px;
+      }
+      &-right {
+          padding-right: 145px;
+      }
+    }
+  }
+  .benefits {
+    &__block {
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      transition: all 0.8s ease;
+      &_back {
+        transform: rotateY(180deg);
+      }
+      &_front {
+        transform: rotateY(0);
+      }
+    }
+    &__item {
+      &:hover {
+        .benefits__block {
+          &_back {
+            transform: rotateY(0);
+          }
+          &_front {
+            transform: rotateY(-180deg);
+          }
+        }
+      }
+    }
+  }
+  .carousel {
+    &-services-offset {
+      padding: 50px 70px;
+    }
+  }
+
+  .block {
+    &_offset {
+      &-m {
+        margin-bottom: 70px;
+      }
+    }
+  }
+
+  .col-contact-offset{
+    padding: 75px 75px 95px;
+  }
+  .form{
+    &-group{
+      &_offset{
+        margin-bottom: 48px;
+      }
+    }
+  }
+  .btn {
+    &_lg {
+      height: 52px;
+      line-height: 20px;
+      padding: 15px 25px;
+    }
+  }
+  .contact {
+    &_offset {
+      padding-left: 75px;
+    }
+    &__box{
+      &_offset{
+        padding: 75px 35px;
+      }
+      &_w{
+        width: 287px;
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .about-project-img {
+    max-height: 385px;
+    float: right;
+  }
+  .benefits {
+    &__block {
+      height: 225px;
+      &_offset {
+        padding: 15px;
+      }
+    }
+    &__item {
+      &_col {
+        flex: 0 0 225px;
+        max-width: 225px;
+        height: 225px;
+      }
+    }
+  }
+  .section-main {
+    &__title {
+      font-size: 10vh;
+      max-width: 80%;
+    }
+  }
+}

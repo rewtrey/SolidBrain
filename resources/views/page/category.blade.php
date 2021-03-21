@@ -4,8 +4,13 @@
 
 @section('content')
 
-    @if ($category->title === 'Blog')
-        @include('admin.blogs.search.blogsSearch')
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    @if ($category->title == 'Blog')
         <div class="row articles">
             @foreach ($blogs as $blog)
                 <div class="col-4">
@@ -21,39 +26,25 @@
                     </div>
                 </div>
             @endforeach
+                @include('admin.blogs.search.blogsSearch')
             {{$blogs->links()}}
         </div>
-    @else
-        @if ($category->title === 'Careers' )
-            <div class="row articles">
-                @foreach ($articles as $article)
-                    <div class="col-4">
-                        <div class="card">
-                            <a href=""></a>
-                            <div class="card-body">
-                                <h2><a href="{{route('article', [$article->slug, $category->slug])}}">{!! $article->title !!}</a></h2>
-                                <p class="card-text">{!! $article->description_short !!}</p>
-                            </div>
-                        </div>
-                    </div>
-                @endforeach
-            </div>
-        @else
-            @if ($category->title === 'Portfolio')
-                <div class="row articles">
-                    @foreach ($articles as $article)
-                        <div class="col-4">
-                            <div class="card">
-                                <a href=""></a>
-                                <div class="card-body">
-                                    <h2><a href="{{route('article', [$article->slug, $category->slug])}}">{!! $article->title !!}</a></h2>
-                                    <p class="card-text">{!! $article->description_short !!}</p>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            @else
+@endif
+
+    @if ($category->title === 'SolidBrain (Home)')
+        @include ('layouts.index');
+    @endif
+
+    @if ($category->title === 'Software Development Services')
+        @include ('layouts.services');
+    @endif
+
+    @if ($category->title === 'E-commerce')
+        @include ('layouts.industries');
+    @endif
+
+
+    @if (isset($category->title))
     <div class="container">
         @forelse ($articles as $article)
             <div class="row">
@@ -68,10 +59,9 @@
 
         {{$articles->links()}}
 </div>
-        @endif
     @endif
 
-    @endif
+
 @endsection
 
 

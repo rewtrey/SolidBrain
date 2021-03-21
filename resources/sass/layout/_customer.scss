@@ -1,0 +1,7 @@
+.customer{
+  &__name{
+    font-size: 14px;
+    color: $labelColor;
+    @include fontRegularItalic;
+  }
+}

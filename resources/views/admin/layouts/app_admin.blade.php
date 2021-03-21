@@ -92,6 +92,17 @@
         <hr class="sidebar-divider">
 
         <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.user_managment.user.index')}}"
+               aria-expanded="true" aria-controls="collapseuser_management">
+                <i class="fas fa-fw fa-cog"></i>
+                <span>User management</span>
+            </a>
+        </li>
+
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+
+        <li class="nav-item">
             <a class="nav-link" href="{{route('admin.contact-us.index')}}"
                aria-expanded="true" aria-controls="collapseContactUs">
                 <i class="fas fa-envelope fa-fw"></i>
@@ -283,8 +294,6 @@
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
-                            <img class="img-profile rounded-circle"
-                                 src="img/undraw_profile.svg">
                         </a>
                         <!-- Dropdown - User Information -->
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

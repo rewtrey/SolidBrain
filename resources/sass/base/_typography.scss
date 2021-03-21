@@ -1,0 +1,48 @@
+@mixin fontLight {
+  font-weight: $wLight;
+  font-style: $sNormal;
+}
+
+@mixin fontRegular {
+  font-weight: $wRegular;
+  font-style: $sNormal;
+}
+
+@mixin fontRegularItalic {
+  font-weight: $wRegular;
+  font-style: $sItalic;
+}
+
+@mixin fontMedium {
+  font-weight: $wMedium;
+  font-style: $sNormal;
+}
+
+@mixin fontSemiBold {
+  font-weight: $wSemiBold;
+  font-style: $sNormal;
+}
+
+@mixin fontBold {
+  font-weight: $wBold;
+  font-style: $sNormal;
+}
+
+@mixin fontBlack {
+  font-weight: $wBlack;
+  font-style: $sNormal;
+}
+
+@mixin fontBoldBlack {
+  font-weight: $wBoldBlack;
+  font-style: $sNormal;
+}
+
+@mixin Montserrat{
+  font-family: Montserrat, $fontType;
+}
+
+body {
+  font-family: $fontFamily, $fontType;
+}
+

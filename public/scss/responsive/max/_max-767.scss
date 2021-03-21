@@ -1,0 +1,39 @@
+@media (max-width: 767.98px) {
+  .section {
+    &_offset {
+      &-t {
+        padding-top: 80px;
+      }
+      &-b {
+        padding-bottom: 80px;
+      }
+      &-y {
+        padding-top: 80px;
+        padding-bottom: 80px;
+        &-sm {
+          padding-top: 40px;
+          padding-bottom: 40px;
+        }
+      }
+    }
+  }
+  .services {
+    &__text {
+      &_offset {
+        margin-bottom: 48px;
+      }
+    }
+  }
+  .carousel{
+    &__control{
+      &_offset{
+        margin-bottom: 56px;
+      }
+    }
+    &__title{
+      font-size: 18px;
+      @include Montserrat;
+      @include fontBoldBlack;
+    }
+  }
+}

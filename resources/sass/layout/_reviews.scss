@@ -1,0 +1,10 @@
+.reviews {
+  &__text {
+    font-size: 16px;
+    color: $textColor;
+    &_h{
+      height: 190px;
+      overflow: auto;
+    }
+  }
+}

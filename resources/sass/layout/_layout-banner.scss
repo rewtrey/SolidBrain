@@ -1,0 +1,18 @@
+.layout{
+  &-three{
+    &__title{
+      &_offset{
+        padding: 25px 100px;
+      }
+    }
+    &__img{
+      position: relative;
+      top: 10px;
+      right: -97px;
+    }
+    &__body{
+      position: relative;
+      left: -145px;
+    }
+  }
+}

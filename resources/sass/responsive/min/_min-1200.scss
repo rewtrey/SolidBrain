@@ -1,0 +1,64 @@
+@media (min-width: 1200px) {
+  .section-main {
+    &__title {
+      font-size: 14vh;
+      max-width: 80%;
+    }
+  }
+  .about-project {
+    &_offset {
+      margin-right: -90px;
+    }
+  }
+  .benefits {
+    &_offset {
+      margin-top: -145px;
+    }
+    &__block {
+      height: 275px;
+      &_offset{
+        padding: 35px;
+      }
+    }
+    &__item {
+      &_col {
+        flex: 0 0 275px;
+        max-width: 275px;
+        height: 275px;
+      }
+    }
+  }
+  .block{
+    &_offset{
+      &-right{
+        &-xl{
+          padding-right: 145px;
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .nav {
+    &__link {
+      &_offset {
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+      }
+      &_border{
+        &:before{
+          margin-right: 25px;
+        }
+      }
+    }
+  }
+  .navbar-collapse{
+    &_offset{
+      padding-left: 40px;
+    }
+  }
+}

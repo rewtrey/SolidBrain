@@ -1,0 +1,42 @@
+.structure{
+  &_offset{
+    margin: 50px 0 25px;
+  }
+  &__item{
+    border: 1px solid $borderColor;
+    border-radius: $radius-sm;
+    padding:21px 24px;
+    &:not(:last-child){
+      margin-bottom: 24px;
+    }
+  }
+  &__name{
+    @include Montserrat;
+    @include fontBoldBlack;
+    color: $default;
+    font-size: 24px;
+  }
+  &-desc{
+    &__name{
+      font-size: 24px;
+      color: $textColor;
+    }
+    &_offset{
+      margin-top: 20px;
+    }
+    &__detail{
+     span{
+       font-size: 18px;
+       color: $textColor;
+       display: block;
+       &:not(:last-child){
+         margin-bottom: 5px;
+       }
+     }
+      &_border{
+        border-left: 1px solid $default;
+        padding-left: 20px;
+      }
+    }
+  }
+}

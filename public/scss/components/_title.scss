@@ -1,0 +1,25 @@
+.title {
+  font-size: 36px;
+  &-h2 {
+    font-size: 49px;
+    color: $titleColor;
+    text-transform: uppercase;
+    @include Montserrat;
+    @include fontBoldBlack;
+  }
+  &-page{
+    @include Montserrat;
+    @include fontBoldBlack;
+    font-size: 48px;
+    color: $bannerColor;
+    &_position{
+      transform: translate(75px, -63px);
+    }
+    &_offset{
+      padding-left: 65px;
+    }
+  }
+  &_offset-control{
+    margin-left: 50px;
+  }
+}

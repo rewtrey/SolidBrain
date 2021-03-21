@@ -22,11 +22,11 @@
                     <td>{{$category->title}}</td>
                     <td>{{$category->published}}</td>
                     <td class="text-right">
-                        <form action="{{route('admin.category.destroy', $category['id'])}}" method="post">
+                        <form action="{{route('admin.category.destroy', $category['slug'])}}" method="post">
                             <input type="hidden" name="_method" value="DELETE">
                             @csrf
 
-                            <a class="btn btn-default" href="{{route('admin.category.edit', $category['id'])}}"><i class="fa fa-edit"></i></a>
+                            <a class="btn btn-default" href="{{route('admin.category.edit', $category['slug'])}}"><i class="fa fa-edit"></i></a>
                             <button type="submit" class="btn"><i class="fa fa-trash-o"></i></button>
                         </form>
                     </td>

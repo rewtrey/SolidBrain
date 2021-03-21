@@ -1,0 +1,29 @@
+@media (min-width: 575px) {
+
+}
+
+@media (min-width: 575px) and (max-width: 991px) {
+
+  .benefits {
+    &_offset {
+      margin: -50% -8px 0;
+    }
+    &__item {
+      &_offset {
+        padding: 0 8px;
+        margin-bottom: 15px;
+      }
+      &_col {
+        flex: 0 0 50%;
+        max-width: 50%;
+        height: 50%;
+      }
+    }
+    &__block{
+      &_back, &_front{
+        height: 160px;
+        padding: 15px;
+      }
+    }
+  }
+}

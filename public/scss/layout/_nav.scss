@@ -1,0 +1,29 @@
+.nav{
+  &__link{
+	color: $white-dark;
+	font-size: 16px;
+	background: none;
+	border:none;
+	&:hover{
+	  color: $default;
+	  text-decoration: none;
+	  &:after{
+		border-color: $default;
+	  }
+	}
+	&_border{
+	 &:before{
+	   border-left: 1px solid $white;
+	   content: '';
+	 }
+	}
+  }
+  &__row{
+	margin-right: -12px;
+	margin-left: -12px;
+  }
+  &__col{
+	padding-left: 12px;
+	padding-right: 12px;
+  }
+}
